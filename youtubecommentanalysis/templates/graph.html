@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/sty.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/st2.css') }}">
+    <title>comment</title>
+</head>
+<body > 
+  <nav class='header'>
+          <div class='navbar'>
+    <div class='navbar-icon'>
+    <img src=" " width="45" />
+      <a href='/'>
+        <img src="../static/spon2.png" alt="logo" width="180" height="150" />
+    <p> Comment Analyser</p>
+         </a>
+    </div>
+
+      
+    </div>
+  </nav>
+  <div class="container">
+      <div class="info">
+          <h1>Video Title : <span style="color: blue">{{video_title}}</span></h2>
+          <h3> Views : <span style="color: gray">{{views}}</span></h3>
+          <h3>Number of Comments: <span style='collor:grey'>{{comments}}</span>  </h3>
+          <!-- <h3> video: <span style='collor:grey'>{{video_link}}</span>  </h3> -->
+
+      </div>
+
+      <div  id="graph" style = " text-align: center;"> 
+
+          <!-- <div id = "simple_chart"></div>  -->
+          <div id = "3dchart" style="text-align: center;"></div> 
+          <!-- <div id = "donut_chart"></div>  -->
+      </div > 
+  </div>
+  <footer >
+    <p> Copyright © 2023 You tube video comment analyser. All rights reserved | Terms and conditions</p>
+  </footer>
+  
+    <script type = "text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+    <script type = "text/javascript"> 
+
+        google.charts.load('current', {'packages': ['corechart']}) 
+
+        google.charts.setOnLoadCallback(drawCharts) 
+
+        function drawCharts() { 
+            var data = new google.visualization.DataTable() 
+          data.addColumn('string', 'Daily Activity') 
+          data.addColumn('number', 'Hours'); 
+        //   8.33, 0.0, 91.67
+          data.addRows([ 
+              ['{{act1}}', {{act1_per}}], 
+              ['{{act2}}',{{act2_per}}], 
+              ['{{act3}}', {{act3_per}}] 
+          ]); 
+
+          var options_2 = { 
+                    'title': 'Sentiment analysis', 
+                              'width': 800, 
+                              'height': 800, 
+                              'is3D': true, 
+                              chartArea: {
+              // backgroundColor: {
+              //   fill: '#FF0000',
+              //   fillOpacity: 0.1
+              // },
+            },
+            // Colors the entire chart area, simple version
+            // backgroundColor: '#FF0000',
+            // Colors the entire chart area, with opacity
+            backgroundColor: {
+
+              fillOpacity: 0.2
+            },
+          }
+
+
+
+          var _3dchart = new google.visualization.PieChart(document.getElementById('3dchart')); 
+          _3dchart.draw(data, options_2);              
+           } 
+
+    </script > 
+</body > 
+</html>

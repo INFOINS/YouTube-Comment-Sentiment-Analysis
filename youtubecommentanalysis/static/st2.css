@@ -1,0 +1,28 @@
+body{
+  background: url(youtube.jpg) no-repeat center center fixed; 
+  background-size: cover;
+  backdrop-filter: brightness(129%) blur(5px);
+
+}
+
+
+.container{
+  display: flex;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  /* background-color: aqua;
+  border: 3px solid black;
+ */
+
+}
+.info{
+  width: 40%;
+  margin-top: 150px;
+  font-size: 
+}
+
+#graph{
+  width: 55%
+
+}
