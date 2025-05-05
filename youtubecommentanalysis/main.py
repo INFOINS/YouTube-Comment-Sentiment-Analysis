@@ -59,7 +59,7 @@ def process():
     video_id = extract.video_id(video_url)
     data.video_title = YouTube(video_url).title
     data.views = YouTube(video_url).views
-    api_key = "AIzaSyBX-j_OWT4A89XfLIcai69C3WaoSR1H_6M"
+    api_key = ""
     print(video_id)
 
     # recursive function to get all replies in a comment thread
